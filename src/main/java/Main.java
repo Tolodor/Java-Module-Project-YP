@@ -21,9 +21,7 @@ public class Main {
         }
 
 
-        public double getSpeed() {
-            return speed;
-        }
+
 
 
         public double calculateDistance() {
