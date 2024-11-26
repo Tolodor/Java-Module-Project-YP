@@ -44,7 +44,7 @@ public class Main {
         }
 
 
-        public Car determineLeader() {
+        public Car ourLeader() {
             Car leader = null;
             double maxDistance = 0;
 
@@ -64,16 +64,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Race race = new Race();
 
-        for (int i = 0; i < 3; i++) {
-            String name;
-            double speed;
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Введите название машины №" + i);
+            String name = scanner.nextLine();
 
-            System.out.println("Введите название автомобиля:");
-            name = scanner.nextLine();
+            int speed;
 
             while (true) {
-                System.out.println("Введите скорость автомобиля (0 < скорость ≤ 250):");
-                speed = scanner.nextDouble();
+                System.out.println("Введите скорость машины №" + i );
+                speed = scanner.nextInt();
                 scanner.nextLine();
 
                 if (speed > 0 && speed <= 250) {
@@ -87,7 +86,7 @@ public class Main {
             race.addCar(car);
         }
 
-        Car leader = race.determineLeader();
+        Car leader = race.ourLeader();
 
         if (leader != null) {
             System.out.println("Самая быстрая машина: " + leader.getName());
